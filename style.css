@@ -23,6 +23,34 @@ body {
   padding-right: 20px;
 }
 
+.form {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 1rem;
+  column-gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+}
+
+.character-amount-container {
+  display: flex;
+  align-items: center;
+}
+
+.number-input {
+  width: 2rem;
+}
+
+
 header {
   text-align: center;
   padding: 20px;
@@ -42,13 +70,15 @@ header {
   padding: 30px 40px;
 }
 
+
 .card-header::after {
   content: " ";
   display: block;
   width: 100%;
   background: #e7e9eb;
-  height: 2px;
+  height: 4px;
 }
+
 
 .card-body {
   min-height: 100px;
@@ -56,6 +86,7 @@ header {
 
 .card-footer {
   text-align: center;
+  background-color: rgb(2, 74, 207);
 }
 
 .card-footer::before {
@@ -86,6 +117,10 @@ header {
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #FFFFFF33;
 }
 
 button[disabled] {
