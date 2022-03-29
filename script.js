@@ -20,6 +20,7 @@ const SYMBOLS_CHAR_CODES = arrayFromLowToHigh(33, 47).concat(
   arrayFromLowToHigh(123, 126)
 )
 
+
 // characterAmountNumber.addEventListener('input', syncCharacterAmount)
 // characterAmountRange.addEventListener('input', syncCharacterAmount)
 
@@ -42,16 +43,20 @@ const SYMBOLS_CHAR_CODES = arrayFromLowToHigh(33, 47).concat(
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+// var passwordLength = ("password")
+// document.getElementById("password").value = generatePassword(passwordLength);
+generateBtn.addEventListener('click', generatePassword)
+
 
 // Write password to the #password input
 // characterAmount, includeUppercase, 
 //   includeNumbers, includeSymbols
 function generatePassword() {
-    let characterAmount = parseInt(prompt("Choose the length of your password: (between 8 and 128"))
-    let includeUppercase = confirm("Include Uppercase Chars?")
-    let includeLowercase = confirm("Include Lowercase Chars?")
-    let includeNumbers = confirm("Include Numbers Chars?")
-    let includeSymbols = confirm("Include Symbols Chars?")
+  let characterAmount = parseInt(prompt("Choose the length of your password: (between 8 and 128"))
+  let includeUppercase = confirm("Include Uppercase Chars?")
+  let includeLowercase = confirm("Include Lowercase Chars?")
+  let includeNumbers = confirm("Include Numbers Chars?")
+  let includeSymbols = confirm("Include Symbols Chars?")
 
     let charCodes = []
     let passwordCharacters = ""
@@ -78,7 +83,12 @@ function generatePassword() {
       let characterCode = getChar(randArray)
       passwordCharacters += String.fromCharCode(characterCode)
     }
-   console.log(passwordCharacters)
+    displayPassword(passwordCharacters)
+}
+
+function displayPassword(pass) {
+  let text = document.querySelector('#password');
+  text.value = pass
 }
 
 function getChar(arr) {
@@ -94,5 +104,13 @@ function arrayFromLowToHigh(low, high) {
   return array
 }
 
+
+
 // Add event listener to generate button
+
 generateBtn.addEventListener("click", generatePassword);
+
+
+
+
+
